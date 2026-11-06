@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siam — PHP & WordPress Backend Developer | Portfolio</title>
+<meta name="description" content="Siam — Backend-focused PHP developer. WordPress Bug Fix, Plugin Development, Maintenance & Support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<canvas id="bgCanvas"></canvas>
+<div class="grid-overlay"></div>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="logo"><span class="logo-bracket">&lt;</span><span class="logo-text">siam</span><span class="logo-bracket">/&gt;</span><span class="logo-tag">.php</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#services">Services</a>
+    <a href="#lab">Live Lab</a>
+    <a href="#skills">Skills</a>
+    <a href="#work">Work</a>
+    <a href="#life">Dev Life</a>
+    <a href="#process">Process</a>
+    <a href="#contact" class="btn btn-primary nav-cta">Hire Me →</a>
+  </div>
+  <div class="nav-actions">
+    <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☀️</button>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-badge"><span class="pulse-dot"></span> Available for freelance • Backend Specialist</div>
+  <h1 class="hero-title">I build the <span class="grad-text">backend.</span><br>I fix what <span class="outline-text">breaks.</span></h1>
+  <p class="hero-sub">Hi, I'm <strong>Siam</strong> — a PHP-obsessed WordPress developer. I don't chase pixels, I chase <strong>performance, clean code & zero-downtime sites</strong>. <br><span class="typed-line">I specialize in <span id="typed"></span><span class="caret">|</span></span></p>
+  <div class="hero-btns">
+    <a href="#lab" class="btn btn-primary btn-lg">▶ Try My Live Lab</a>
+    <a href="#services" class="btn btn-ghost btn-lg">See What I Fix</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="counter" data-target="120">0</span>+<label>Plugins Built</label></div>
+    <div class="stat"><span class="counter" data-target="350">0</span>+<label>Bugs Squashed</label></div>
+    <div class="stat"><span class="counter" data-target="99">0</span>%<label>Uptime Kept</label></div>
+    <div class="stat"><span class="counter" data-target="5">0</span>+<label>Years of PHP</label></div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="code-window" id="codeWindow">
+      <div class="code-header">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="code-filename">fix-bug.php</span>
+        <button class="copy-btn" id="copyBtn">📋 Copy</button>
+      </div>
+      <pre class="code-body"><code><span class="tok-kw">&lt;?php</span>
+<span class="tok-var">$site</span> = <span class="tok-fn">get_site()</span>;
+<span class="tok-var">$bug</span> = <span class="tok-fn">find_bug</span>(<span class="tok-var">$site</span>);
+<span class="tok-kw">while</span> (<span class="tok-var">$bug</span>) {
+  <span class="tok-var">$bug</span> = <span class="tok-fn">fix</span>(<span class="tok-var">$bug</span>);
+  <span class="tok-var">$site</span>.<span class="tok-fn">speed</span>++;
+}
+<span class="tok-kw">echo</span> <span class="tok-str">"0 errors. 100% uptime."</span>;</code></pre>
+    </div>
+    <div class="float-badge php-badge">🐘 PHP 8.3</div>
+    <div class="float-badge wp-badge">🔵 WordPress</div>
+    <div class="float-badge js-badge">⚡ JS (when needed)</div>
+    <div class="float-badge fix-badge">🐛 → ✅ Fixed</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap"><div class="marquee" id="marquee"></div></div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <p class="eyebrow">// What I Do Best</p>
+  <h2 class="section-title">Backend services,<br><span class="grad-text">zero fluff.</span></h2>
+  <p class="section-desc">Frontend is a tool I use. Backend is where I live. Every service below is built for speed, security & scale.</p>
+  <div class="services-grid">
+    <article class="service-card reveal" data-tilt>
+      <div class="service-icon">🐛</div><h3>WordPress Bug Fix</h3>
+      <p>White screen of death? Plugin conflicts? Database errors? I debug fast, fix permanently, and explain why it happened.</p>
+      <ul><li>✓ Fatal errors & 500s</li><li>✓ Plugin / theme conflicts</li><li>✓ Slow queries & bloat</li></ul>
+      <span class="service-price">From $49 / fix</span>
+    </article>
+    <article class="service-card featured reveal" data-tilt>
+      <span class="card-tag">Most Popular</span>
+      <div class="service-icon">🧩</div><h3>Plugin Development</h3>
+      <p>Custom WordPress plugins — secure, object-oriented, hooked properly. From MVP to full product with admin UI & REST API.</p>
+      <ul><li>✓ Custom post types & meta</li><li>✓ WooCommerce extensions</li><li>✓ REST API + AJAX</li></ul>
+      <span class="service-price">From $399 / plugin</span>
+    </article>
+    <article class="service-card reveal" data-tilt>
+      <div class="service-icon">🛡️</div><h3>Site Maintenance</h3>
+      <p>Updates, backups, security hardening, performance tuning. Your site stays fast, safe & online — I handle the boring stuff.</p>
+      <ul><li>✓ Weekly updates & backups</li><li>✓ Security & malware cleanup</li><li>✓ Speed optimization</li></ul>
+      <span class="service-price">From $79 / month</span>
+    </article>
+    <article class="service-card reveal" data-tilt>
+      <div class="service-icon">🎧</div><h3>WordPress Support</h3>
+      <p>Priority support for agencies & site owners. Same-day replies, clear explanations, no jargon — just fixes that stick.</p>
+      <ul><li>✓ Same-day response</li><li>✓ WooCommerce support</li><li>✓ Training & docs</li></ul>
+      <span class="service-price">From $29 / hour</span>
+    </article>
+  </div>
+</section>
+
+<!-- LIVE LAB -->
+<section class="section lab-section" id="lab">
+  <p class="eyebrow">// Don't Just Read It. Try It.</p>
+  <h2 class="section-title">The <span class="grad-text">Live Lab</span> 🔬</h2>
+  <p class="section-desc">This is how I think — interactively. Play with my terminal and hunt the bugs I hunt daily.</p>
+
+  <div class="lab-grid">
+    <!-- Terminal -->
+    <div class="terminal reveal">
+      <div class="term-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span>php — interactive shell</span><button class="copy-btn" id="termClear">Clear</button></div>
+      <div class="term-body" id="termBody">
+        <div class="term-line dim">Welcome to Siam's PHP shell. Type <b>help</b> to begin.</div>
+        <div class="term-line input-line"><span class="prompt">php&gt;</span><input id="termInput" type="text" placeholder="try: help, skills, fix, hire..." autocomplete="off" spellcheck="false"></div>
+      </div>
+      <div class="term-hints"><button data-cmd="help">help</button><button data-cmd="skills">skills</button><button data-cmd="fix">fix my site</button><button data-cmd="hire">hire siam</button><button data-cmd="php">php -v</button></div>
+    </div>
+
+    <!-- Bug Game -->
+    <div class="bug-game reveal">
+      <div class="game-header"><h3>🐛 Bug Hunt</h3><div class="game-score"><span>Score: <b id="bugScore">0</b></span><span>Time: <b id="bugTimer">30</b>s</span></div></div>
+      <p class="game-desc">Bugs are spawning! Click them to fix before time runs out. Real life: I do this all day.</p>
+      <div class="game-area" id="gameArea"><div class="game-start" id="gameStart"><p>Ready?</p><button class="btn btn-primary" id="startGameBtn">▶ Start Hunting</button></div></div>
+      <button class="btn btn-ghost btn-block" id="resetGameBtn" style="display:none">↻ Play Again</button>
+      <div class="game-result" id="gameResult"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <p class="eyebrow">// My Stack</p>
+  <h2 class="section-title">Backend first.<br><span class="grad-text">Frontend when it serves the backend.</span></h2>
+  <div class="skill-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="php">PHP / Backend</button>
+    <button class="filter-btn" data-filter="wp">WordPress</button>
+    <button class="filter-btn" data-filter="js">JS / Frontend</button>
+  </div>
+  <div class="skills-grid" id="skillsGrid"></div>
+</section>
+
+<!-- WORK -->
+<section class="section" id="work">
+  <p class="eyebrow">// Selected Work</p>
+  <h2 class="section-title">Things I've <span class="grad-text">built & fixed</span></h2>
+  <div class="work-grid">
+    <article class="work-card reveal" data-tilt>
+      <div class="work-top"><span class="work-icon">🛒</span><span class="work-tag">WooCommerce</span></div>
+      <h3>Checkout Booster Pro</h3><p>Custom plugin that lifted conversion 34% by fixing a broken checkout flow and adding abandoned-cart recovery.</p>
+      <div class="work-meta"><span>PHP • SQL • AJAX</span><span class="work-result">+34% conversions</span></div>
+    </article>
+    <article class="work-card reveal" data-tilt>
+      <div class="work-top"><span class="work-icon">🚨</span><span class="work-tag">Bug Fix</span></div>
+      <h3>WSOD Rescue — 200+ Sites</h3><p>Built a diagnostic toolkit that auto-detects plugin conflicts and recovers white-screen sites in minutes, not hours.</p>
+      <div class="work-meta"><span>PHP • WP-CLI</span><span class="work-result">Saved 200+ sites</span></div>
+    </article>
+    <article class="work-card reveal" data-tilt>
+      <div class="work-top"><span class="work-icon">⚡</span><span class="work-tag">Performance</span></div>
+      <h3>SpeedVault Optimizer</h3><p>Database & object-cache optimizer. Cut average load time from 4.2s → 0.6s across a 40-site maintenance client base.</p>
+      <div class="work-meta"><span>MySQL • Redis • PHP</span><span class="work-result">4.2s → 0.6s</span></div>
+    </article>
+    <article class="work-card reveal" data-tilt>
+      <div class="work-top"><span class="work-icon">🔐</span><span class="work-tag">Security</span></div>
+      <h3>LockDown Plugin</h3><p>Hardening plugin — file integrity checks, login guards, and one-click malware cleanup for vulnerable sites.</p>
+      <div class="work-meta"><span>PHP • Security</span><span class="work-result">0 breaches since launch</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- DEVELOPER LIFE — GIF GALLERY -->
+<section class="section life-section" id="life">
+  <p class="eyebrow">// Behind The Code</p>
+  <h2 class="section-title">A backend developer's <span class="grad-text">daily life</span></h2>
+  <p class="section-desc">Not just sites I ship — it's the real, coffee-fueled, 2am-debugging world behind every fix, plugin, and deploy. This is my life in GIFs.</p>
+  <div class="life-grid" id="lifeGrid"></div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section" id="process">
+  <p class="eyebrow">// How I Work</p>
+  <h2 class="section-title">From bug to <span class="grad-text">fixed.</span></h2>
+  <div class="process-steps">
+    <div class="step reveal"><span class="step-num">01</span><h3>Listen & Reproduce</h3><p>I get your error logs, access, and story. I reproduce it before I touch anything.</p></div>
+    <div class="step reveal"><span class="step-num">02</span><h3>Diagnose Root Cause</h3><p>No band-aids. I trace hooks, queries, and conflicts to the actual source.</p></div>
+    <div class="step reveal"><span class="step-num">03</span><h3>Fix & Test</h3><p>Clean, minimal fix. Tested on staging first. Backups always before changes.</p></div>
+    <div class="step reveal"><span class="step-num">04</span><h3>Ship & Support</h3><p>Deployed, monitored, documented. I stick around if anything looks off.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <p class="eyebrow">// Kind Words</p>
+  <h2 class="section-title">Clients <span class="grad-text">say it best</span></h2>
+  <div class="testi-wrap">
+    <div class="testi-card" id="testiCard"></div>
+    <div class="testi-nav"><button class="icon-btn" id="prevTesti">←</button><span class="testi-dots" id="testiDots"></span><button class="icon-btn" id="nextTesti">→</button></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <p class="eyebrow">// Got a broken site?</p>
+  <h2 class="section-title">Let's fix it <span class="grad-text">together.</span></h2>
+  <p class="section-desc">Email me what's broken — I'll reply within 24 hours with a plan, not a sales pitch.</p>
+  <div class="contact-grid">
+    <div class="contact-card reveal">
+      <span class="contact-icon">📧</span>
+      <h3>Email me directly</h3>
+      <a href="mailto:siamweb@yahoo.com?subject=Help%20with%20my%20WordPress%20site" class="email-link">siamweb@yahoo.com</a>
+      <p class="copy-hint" id="emailCopied"></p>
+      <div class="contact-btns">
+        <a class="btn btn-primary btn-lg" href="mailto:siamweb@yahoo.com?subject=Help%20with%20my%20WordPress%20site">✉️ Send Email</a>
+        <button class="btn btn-ghost btn-lg" id="copyEmailBtn">📋 Copy Address</button>
+      </div>
+      <p class="contact-sub">💬 Response &lt; 24h &nbsp;•&nbsp; 🌍 Remote • Worldwide</p>
+    </div>
+    <aside class="contact-info reveal">
+      <h3>What I help with</h3>
+      <p>🐛 WordPress bug fixes<br>🧩 Custom plugin development<br>🛡️ Site maintenance &amp; security<br>🎧 WordPress support</p>
+      <div class="contact-badges"><span>PHP</span><span>WordPress</span><span>MySQL</span><span>WooCommerce</span><span>WP-CLI</span></div>
+      <div class="availability"><span class="pulse-dot"></span> Currently booking — 2 slots left this month</div>
+    </aside>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Siam — Built with PHP passion & too much coffee ☕</p>
+  <p><a href="#top">Back to top ↑</a></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
